@@ -1,0 +1,77 @@
+{
+ "exit_code": 1,
+ "facet": "F6",
+ "generated_by": "amph-comic/tools/artifact_publish.py",
+ "issue": 30,
+ "module_file": "text.py",
+ "module_repo": "BoozLee/amph-text-gate",
+ "module_repo_url": "https://github.com/BoozLee/amph-text-gate",
+ "module_source_sha256": "484f226699871893d0189e6f89177b5ed1b30ea5ba7ac4f62fc14572c25092ec",
+ "plate": "art/30.jpg",
+ "plate_sha256": "14359df0ee329d613dacd1feb0164982bee6e286cd6fc94f4b44d2292f67a605",
+ "recipe": "text.py <plate> --json",
+ "stdout": "{\n \"image\": \"${ART_ROOT}/art/30.jpg\",\n \"pass\": false,\n \"checks\": [\n  {\n   \"name\": \"typeblock\",\n   \"pass\": false,\n   \"max_conf\": 91.52,\n   \"max_token\": \"eray\",\n   \"n_long\": 9,\n   \"n_tokens\": 47,\n   \"threshold\": 88.0,\n   \"detail\": \"peak 91.5 on 'eray'; 2 run(s) at or above 88.0 means a type block is present -- decide if you want one, the gate cannot say the words are real\",\n   \"flagged\": [\n    {\n     \"text\": \"eray\",\n     \"conf\": 91.518234,\n     \"box\": [\n      181,\n      831,\n      40,\n      13\n     ]\n    },\n    {\n     \"text\": \"Algnt\",\n     \"conf\": 88.887276,\n     \"box\": [\n      60,\n      812,\n      52,\n      13\n     ]\n    }\n   ]\n  },\n  {\n   \"name\": \"corner\",\n   \"pass\": false,\n   \"band\": 0.12,\n   \"in_band\": 3,\n   \"isolated\": 1,\n   \"detail\": \"3 mark(s) in the outer 12% strips; 1 of them isolated on their baseline (a title block has neighbours, a signature does not)\",\n   \"hits\": [\n    {\n     \"text\": \"ASventec\",\n     \"conf\": 81.843178,\n     \"box\": [\n      58,\n      850,\n      90,\n      10\n     ]\n    }\n   ]\n  }\n ],\n \"known_limits\": [\n  \"typeblock cannot tell a real word from word-shaped gibberish: a real word burned into a corpus image reads conf 90.4, and issue 26's fabrications 'Eosic'/'Niew'/'Conuum' read 89-93.\",\n  \"An ornate display face can hide a real word below the threshold: issue 30's 'AMPHETAMEME' reads 67.9, below the gibberish on issues 26 and 44.\",\n  \"corner needs OCR to see the mark, so a forgery clean enough to defeat tesseract is invisible to it.\"\n ]\n}",
+ "verdict": {
+  "checks": [
+   {
+    "detail": "peak 91.5 on 'eray'; 2 run(s) at or above 88.0 means a type block is present -- decide if you want one, the gate cannot say the words are real",
+    "flagged": [
+     {
+      "box": [
+       181,
+       831,
+       40,
+       13
+      ],
+      "conf": 91.518234,
+      "text": "eray"
+     },
+     {
+      "box": [
+       60,
+       812,
+       52,
+       13
+      ],
+      "conf": 88.887276,
+      "text": "Algnt"
+     }
+    ],
+    "max_conf": 91.52,
+    "max_token": "eray",
+    "n_long": 9,
+    "n_tokens": 47,
+    "name": "typeblock",
+    "pass": false,
+    "threshold": 88.0
+   },
+   {
+    "band": 0.12,
+    "detail": "3 mark(s) in the outer 12% strips; 1 of them isolated on their baseline (a title block has neighbours, a signature does not)",
+    "hits": [
+     {
+      "box": [
+       58,
+       850,
+       90,
+       10
+      ],
+      "conf": 81.843178,
+      "text": "ASventec"
+     }
+    ],
+    "in_band": 3,
+    "isolated": 1,
+    "name": "corner",
+    "pass": false
+   }
+  ],
+  "image": "${ART_ROOT}/art/30.jpg",
+  "known_limits": [
+   "typeblock cannot tell a real word from word-shaped gibberish: a real word burned into a corpus image reads conf 90.4, and issue 26's fabrications 'Eosic'/'Niew'/'Conuum' read 89-93.",
+   "An ornate display face can hide a real word below the threshold: issue 30's 'AMPHETAMEME' reads 67.9, below the gibberish on issues 26 and 44.",
+   "corner needs OCR to see the mark, so a forgery clean enough to defeat tesseract is invisible to it."
+  ],
+  "pass": false
+ }
+}

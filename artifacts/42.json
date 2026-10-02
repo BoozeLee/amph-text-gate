@@ -1,0 +1,76 @@
+{
+ "exit_code": 1,
+ "facet": "F6",
+ "generated_by": "amph-comic/tools/artifact_publish.py",
+ "issue": 42,
+ "module_file": "text.py",
+ "module_repo": "BoozLee/amph-text-gate",
+ "module_repo_url": "https://github.com/BoozLee/amph-text-gate",
+ "module_source_sha256": "484f226699871893d0189e6f89177b5ed1b30ea5ba7ac4f62fc14572c25092ec",
+ "plate": "art/42.jpg",
+ "plate_sha256": "40bd170846972c997caa34c0154b3c707d1f3a72d4d1ff4def611a5a3a7bb157",
+ "recipe": "text.py <plate> --json",
+ "stdout": "{\n \"image\": \"${ART_ROOT}/art/42.jpg\",\n \"pass\": false,\n \"checks\": [\n  {\n   \"name\": \"typeblock\",\n   \"pass\": false,\n   \"max_conf\": 91.86,\n   \"max_token\": \"Amphetamemes\",\n   \"n_long\": 39,\n   \"n_tokens\": 83,\n   \"threshold\": 88.0,\n   \"detail\": \"peak 91.9 on 'Amphetamemes'; 3 run(s) at or above 88.0 means a type block is present -- decide if you want one, the gate cannot say the words are real\",\n   \"flagged\": [\n    {\n     \"text\": \"Amphetamemes\",\n     \"conf\": 91.859169,\n     \"box\": [\n      30,\n      47,\n      209,\n      24\n     ]\n    },\n    {\n     \"text\": \"Template\",\n     \"conf\": 91.109116,\n     \"box\": [\n      508,\n      47,\n      116,\n      24\n     ]\n    },\n    {\n     \"text\": \"Quantum-Energetic\",\n     \"conf\": 90.099991,\n     \"box\": [\n      248,\n      46,\n      251,\n      25\n     ]\n    }\n   ]\n  },\n  {\n   \"name\": \"corner\",\n   \"pass\": true,\n   \"band\": 0.12,\n   \"in_band\": 2,\n   \"isolated\": 0,\n   \"detail\": \"2 mark(s) in the outer 12% strips; 0 of them isolated on their baseline (a title block has neighbours, a signature does not)\",\n   \"hits\": []\n  }\n ],\n \"known_limits\": [\n  \"typeblock cannot tell a real word from word-shaped gibberish: a real word burned into a corpus image reads conf 90.4, and issue 26's fabrications 'Eosic'/'Niew'/'Conuum' read 89-93.\",\n  \"An ornate display face can hide a real word below the threshold: issue 30's 'AMPHETAMEME' reads 67.9, below the gibberish on issues 26 and 44.\",\n  \"corner needs OCR to see the mark, so a forgery clean enough to defeat tesseract is invisible to it.\"\n ]\n}",
+ "verdict": {
+  "checks": [
+   {
+    "detail": "peak 91.9 on 'Amphetamemes'; 3 run(s) at or above 88.0 means a type block is present -- decide if you want one, the gate cannot say the words are real",
+    "flagged": [
+     {
+      "box": [
+       30,
+       47,
+       209,
+       24
+      ],
+      "conf": 91.859169,
+      "text": "Amphetamemes"
+     },
+     {
+      "box": [
+       508,
+       47,
+       116,
+       24
+      ],
+      "conf": 91.109116,
+      "text": "Template"
+     },
+     {
+      "box": [
+       248,
+       46,
+       251,
+       25
+      ],
+      "conf": 90.099991,
+      "text": "Quantum-Energetic"
+     }
+    ],
+    "max_conf": 91.86,
+    "max_token": "Amphetamemes",
+    "n_long": 39,
+    "n_tokens": 83,
+    "name": "typeblock",
+    "pass": false,
+    "threshold": 88.0
+   },
+   {
+    "band": 0.12,
+    "detail": "2 mark(s) in the outer 12% strips; 0 of them isolated on their baseline (a title block has neighbours, a signature does not)",
+    "hits": [],
+    "in_band": 2,
+    "isolated": 0,
+    "name": "corner",
+    "pass": true
+   }
+  ],
+  "image": "${ART_ROOT}/art/42.jpg",
+  "known_limits": [
+   "typeblock cannot tell a real word from word-shaped gibberish: a real word burned into a corpus image reads conf 90.4, and issue 26's fabrications 'Eosic'/'Niew'/'Conuum' read 89-93.",
+   "An ornate display face can hide a real word below the threshold: issue 30's 'AMPHETAMEME' reads 67.9, below the gibberish on issues 26 and 44.",
+   "corner needs OCR to see the mark, so a forgery clean enough to defeat tesseract is invisible to it."
+  ],
+  "pass": false
+ }
+}

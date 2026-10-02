@@ -1,0 +1,96 @@
+{
+ "exit_code": 1,
+ "facet": "F6",
+ "generated_by": "amph-comic/tools/artifact_publish.py",
+ "issue": 44,
+ "module_file": "text.py",
+ "module_repo": "BoozLee/amph-text-gate",
+ "module_repo_url": "https://github.com/BoozLee/amph-text-gate",
+ "module_source_sha256": "484f226699871893d0189e6f89177b5ed1b30ea5ba7ac4f62fc14572c25092ec",
+ "plate": "art/44.jpg",
+ "plate_sha256": "8deb061a71641be2ba765f798a4993fa743201500e372ad728d190d16230ad09",
+ "recipe": "text.py <plate> --json",
+ "stdout": "{\n \"image\": \"${ART_ROOT}/art/44.jpg\",\n \"pass\": false,\n \"checks\": [\n  {\n   \"name\": \"typeblock\",\n   \"pass\": false,\n   \"max_conf\": 92.49,\n   \"max_token\": \"LEANTC\",\n   \"n_long\": 42,\n   \"n_tokens\": 102,\n   \"threshold\": 88.0,\n   \"detail\": \"peak 92.5 on 'LEANTC'; 5 run(s) at or above 88.0 means a type block is present -- decide if you want one, the gate cannot say the words are real\",\n   \"flagged\": [\n    {\n     \"text\": \"LEANTC\",\n     \"conf\": 92.492264,\n     \"box\": [\n      707,\n      34,\n      48,\n      9\n     ]\n    },\n    {\n     \"text\": \"TEMPLATE\",\n     \"conf\": 92.43325,\n     \"box\": [\n      808,\n      856,\n      84,\n      23\n     ]\n    },\n    {\n     \"text\": \"RETRABLES\",\n     \"conf\": 89.869186,\n     \"box\": [\n      516,\n      866,\n      95,\n      13\n     ]\n    },\n    {\n     \"text\": \"QULAMP-ENIRGESE\",\n     \"conf\": 89.510429,\n     \"box\": [\n      625,\n      856,\n      172,\n      24\n     ]\n    },\n    {\n     \"text\": \"DAEE\",\n     \"conf\": 88.785805,\n     \"box\": [\n      665,\n      546,\n      30,\n      9\n     ]\n    }\n   ]\n  },\n  {\n   \"name\": \"corner\",\n   \"pass\": true,\n   \"band\": 0.12,\n   \"in_band\": 1,\n   \"isolated\": 0,\n   \"detail\": \"1 mark(s) in the outer 12% strips; 0 of them isolated on their baseline (a title block has neighbours, a signature does not)\",\n   \"hits\": []\n  }\n ],\n \"known_limits\": [\n  \"typeblock cannot tell a real word from word-shaped gibberish: a real word burned into a corpus image reads conf 90.4, and issue 26's fabrications 'Eosic'/'Niew'/'Conuum' read 89-93.\",\n  \"An ornate display face can hide a real word below the threshold: issue 30's 'AMPHETAMEME' reads 67.9, below the gibberish on issues 26 and 44.\",\n  \"corner needs OCR to see the mark, so a forgery clean enough to defeat tesseract is invisible to it.\"\n ]\n}",
+ "verdict": {
+  "checks": [
+   {
+    "detail": "peak 92.5 on 'LEANTC'; 5 run(s) at or above 88.0 means a type block is present -- decide if you want one, the gate cannot say the words are real",
+    "flagged": [
+     {
+      "box": [
+       707,
+       34,
+       48,
+       9
+      ],
+      "conf": 92.492264,
+      "text": "LEANTC"
+     },
+     {
+      "box": [
+       808,
+       856,
+       84,
+       23
+      ],
+      "conf": 92.43325,
+      "text": "TEMPLATE"
+     },
+     {
+      "box": [
+       516,
+       866,
+       95,
+       13
+      ],
+      "conf": 89.869186,
+      "text": "RETRABLES"
+     },
+     {
+      "box": [
+       625,
+       856,
+       172,
+       24
+      ],
+      "conf": 89.510429,
+      "text": "QULAMP-ENIRGESE"
+     },
+     {
+      "box": [
+       665,
+       546,
+       30,
+       9
+      ],
+      "conf": 88.785805,
+      "text": "DAEE"
+     }
+    ],
+    "max_conf": 92.49,
+    "max_token": "LEANTC",
+    "n_long": 42,
+    "n_tokens": 102,
+    "name": "typeblock",
+    "pass": false,
+    "threshold": 88.0
+   },
+   {
+    "band": 0.12,
+    "detail": "1 mark(s) in the outer 12% strips; 0 of them isolated on their baseline (a title block has neighbours, a signature does not)",
+    "hits": [],
+    "in_band": 1,
+    "isolated": 0,
+    "name": "corner",
+    "pass": true
+   }
+  ],
+  "image": "${ART_ROOT}/art/44.jpg",
+  "known_limits": [
+   "typeblock cannot tell a real word from word-shaped gibberish: a real word burned into a corpus image reads conf 90.4, and issue 26's fabrications 'Eosic'/'Niew'/'Conuum' read 89-93.",
+   "An ornate display face can hide a real word below the threshold: issue 30's 'AMPHETAMEME' reads 67.9, below the gibberish on issues 26 and 44.",
+   "corner needs OCR to see the mark, so a forgery clean enough to defeat tesseract is invisible to it."
+  ],
+  "pass": false
+ }
+}
